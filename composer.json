@@ -1,0 +1,8 @@
+{
+    "name": "app/banco_senhas",
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        }
+    }
+}
