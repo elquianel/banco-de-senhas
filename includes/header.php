@@ -12,7 +12,7 @@
   </head>
   <body class="bg-dark text-light">
     <div class="container">
-        <div class="jumbotron bg-danger">
+        <div class="jumbotron bg-info">
             <h1>Banco de senhas</h1>
         </div>
         <p>Mini banco de senhas utilizando a criptografia com SSH</p>

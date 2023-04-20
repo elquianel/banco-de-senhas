@@ -15,8 +15,8 @@
 <main>
     <section>
         <?= $msg; ?>
-        <a href="register.php">
-            <button class="btn btn-success">Nova vaga</button>
+        <a href="./pages/passwords/register.php">
+            <button class="btn btn-success">Nova senha</button>
         </a>
     </section>
 
@@ -25,40 +25,36 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Título</th>
-                    <th>Descrição</th>
-                    <th>Status</th>
+                    <th>Plataforma</th>
+                    <th>Email</th>
+                    <th>Login</th>
+                    <th>Senha</th>
                     <th>Data</th>
                     <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
-                <?php if($vagas): ?>
-                    <?php foreach($vagas as $vaga): ?>
+                <?php if($passwords): ?>
+                    <?php foreach($passwords as $pass): ?>
                     <tr>
-                        <td><?= $vaga->id; ?></td>
-                        <td><?= $vaga->title; ?></td>
-                        <td><?= $vaga->description; ?></td>
+                        <td><?= $pass->id; ?></td>
+                        <td><?= $pass->plataform; ?></td>
+                        <td><?= $pass->email; ?></td>
+                        <td><?= $pass->login; ?></td>
+                        <td><?= $passDecrypt; ?></td>
+                        <td><?= $pass->created_at; ?></td>
                         <td>
-                            <?php if($vaga->status == 'Y'):?>
-                                <span class="badge badge-success">Ativo</span>
-                            <?php else:?>
-                                <span class="badge badge-danger">Inativo</span>
-                            <?php endif;?>
-                        </td>
-                        <td><?= $vaga->date; ?></td>
-                        <td>
-                            <a href="edit.php?id=<?= $vaga->id;?>" >
+                            <a href="./pages/passwords/edit.php?id=<?= $pass->id;?>" >
                                 <button class="btn btn-warning">Editar</button>
                             </a>
-                            <a href="delete.php?id=<?= $vaga->id; ?>">
+                            <a href="./pages/passwords/delete.php?id=<?= $pass->id; ?>">
                                 <button class="btn btn-danger">Excluir</button>
                             </a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
                 <?php else: ?>
-                    <strong>Nenhuma vaga ainda cadastrada!! <a href="register.php">Clique aqui para inserir uma.</a></strong>
+                    <strong>Nenhuma senha ainda cadastrada!! <a href="../pages/passwords/register.php">Clique aqui para inserir uma.</a></strong>
                 <?php endif; ?>
             </tbody>
         </table>

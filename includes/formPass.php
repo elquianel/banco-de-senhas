@@ -9,30 +9,23 @@
 
     <form method="post">
         <div class="form-group">
-            <label for="">Título</label>
-            <input type="text" name="title" class="form-control" value="<?= ($obVaga->title); ?>">
+            <label for="">Plataforma</label>
+            <input type="text" name="plataform" class="form-control" value="<?= ($obPass->plataform); ?>">
         </div>
 
         <div class="form-group">
-            <label for="">Descrição</label>
-            <textarea name="description" cols="30" rows="5" class="form-control"><?= $obVaga->description; ?></textarea>
+            <label for="">Email</label>
+            <input type="email" name="email" class="form-control" value="<?= ($obPass->email); ?>">
         </div>
 
         <div class="form-group">
-            <label for="">Status</label>
-            <div>
-                <div class="form-check form-check-inline">
-                    <label class="form-control">
-                        <input type="radio" name="status" value="Y" checked> Ativo
-                    </label>
-                </div>
+            <label for="">Login</label>
+            <input type="text" name="login" class="form-control" value="<?= ($obPass->login); ?>">
+        </div>
 
-                <div class="form-check form-check-inline">
-                    <label class="form-control">
-                        <input type="radio" name="status" value="N" <?= $obVaga->status == 'N' ? 'checked' : ''; ?>> Inativo
-                    </label>
-                </div>
-            </div>
+        <div class="form-group">
+            <label for="">Senha</label>
+            <input type="password" name="password" class="form-control" value="<?= ($obPass->password); ?>">
         </div>
 
         <div class="form-group">
